@@ -92,45 +92,45 @@ if ( ! function_exists( 'wtp_base_css' ) ) {
         // Spacing
         
         // padding
-        $css->set_selector( 'padding-left' );
+        $css->set_selector( '.padding-left' );
             $css->add_property( 'padding-left', absint( $spacing_settings['mobile_content_left'] ) . 'px');
-        $css->set_selector( 'padding-right' );
+        $css->set_selector( '.padding-right' );
             $css->add_property( 'padding-right', absint( $spacing_settings['mobile_content_right'] ) . 'px');
-        $css->set_selector( 'padding-top' );
+        $css->set_selector( '.padding-top' );
             $css->add_property( 'padding-top', absint( $spacing_settings['mobile_content_top'] ) . 'px');
-        $css->set_selector( 'padding-bottom' );
+        $css->set_selector( '.padding-bottom' );
             $css->add_property( 'padding-bottom', absint( $spacing_settings['mobile_content_bottom'] ) . 'px');
 
         // margin
-        $css->set_selector( 'margin-left' );
+        $css->set_selector( '.margin-left' );
             $css->add_property( 'margin-left', absint( $spacing_settings['mobile_content_left'] ) . 'px');
-        $css->set_selector( 'margin-right' );
+        $css->set_selector( '.margin-right' );
             $css->add_property( 'margin-right', absint( $spacing_settings['mobile_content_right'] ) . 'px');
-        $css->set_selector( 'margin-top' );
+        $css->set_selector( '.margin-top' );
             $css->add_property( 'margin-top', absint( $spacing_settings['mobile_content_top'] ) . 'px');
-        $css->set_selector( 'margin-bottom' );
+        $css->set_selector( '.margin-bottom' );
             $css->add_property( 'margin-bottom', absint( $spacing_settings['mobile_content_bottom'] ) . 'px');
 
 
         $css->start_media_query( $media_query_min_width_desktop );
             // padding
-            $css->set_selector( 'padding-left' );
+            $css->set_selector( '.padding-left' );
                 $css->add_property( 'padding-left', absint( $spacing_settings['content_left'] ) . 'px');
-            $css->set_selector( 'padding-right' );
+            $css->set_selector( '.padding-right' );
                 $css->add_property( 'padding-right', absint( $spacing_settings['content_right'] ) . 'px');
-            $css->set_selector( 'padding-top' );
+            $css->set_selector( '.padding-top' );
                 $css->add_property( 'padding-top', absint( $spacing_settings['content_top'] ) . 'px');
-            $css->set_selector( 'padding-bottom' );
+            $css->set_selector( '.padding-bottom' );
                 $css->add_property( 'padding-bottom', absint( $spacing_settings['content_bottom'] ) . 'px');
 
             // margin
-            $css->set_selector( 'margin-left' );
+            $css->set_selector( '.margin-left' );
                 $css->add_property( 'margin-left', absint( $spacing_settings['content_left'] ) . 'px');
-            $css->set_selector( 'margin-right' );
+            $css->set_selector( '.margin-right' );
                 $css->add_property( 'margin-right', absint( $spacing_settings['content_right'] ) . 'px');
-            $css->set_selector( 'margin-top' );
+            $css->set_selector( '.margin-top' );
                 $css->add_property( 'margin-top', absint( $spacing_settings['content_top'] ) . 'px');
-            $css->set_selector( 'margin-bottom' );
+            $css->set_selector( '.margin-bottom' );
                 $css->add_property( 'margin-bottom', absint( $spacing_settings['content_bottom'] ) . 'px');
         $css->stop_media_query();
 
