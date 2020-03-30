@@ -118,7 +118,7 @@ function tu_autho_link() {
  */
 add_filter( 'generate_number_of_fonts','tu_show_fifty_google_fonts' );
 function tu_show_fifty_google_fonts() {
-	return 0;
+	return 30;
 }
 
 add_filter( 'generate_typography_customize_list', 'tu_add_google_fonts' );
