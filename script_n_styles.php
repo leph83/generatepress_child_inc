@@ -25,12 +25,17 @@ add_action( 'wp_enqueue_scripts', 'generatepress_child_enqueue_scripts', 100 );
 
 
 /**
- * Add Custom Gutenberg Styles
+ * Add Custom Gutenberg Styles to admin
  */
 function gutenberg_styles() {
 	wp_enqueue_script( 'wtp-gutenberg-styles-js', trailingslashit( get_stylesheet_directory_uri() ) . 'js/gutenberg-styles.js', array('wp-blocks'), '2020', true );
+	wp_enqueue_style( 'style-gutenberg', trailingslashit( get_stylesheet_directory_uri() ) . 'css/gutenberg.css' );
+
 }
 add_action('admin_enqueue_scripts', 'gutenberg_styles');
+
+
+
 
 
 
