@@ -194,6 +194,15 @@ if ( ! function_exists( 'wtp_base_css' ) ) {
 
   
 
+        // GROUP
+        // just because I group something, doesn't mean I want a padding around it
+        $css->set_selector( '.wp-block-group__inner-container');
+            $css->add_property( 'padding', 'initial');
+        
+
+
+
+
 		return apply_filters( 'wtp_base_css_output', $css->css_output() );
 	}
 }
@@ -203,11 +212,11 @@ if ( ! function_exists( 'wtp_base_css' ) ) {
  */
 add_action( 'enqueue_block_editor_assets', function() {
     wp_add_inline_style( 'generate-block-editor-styles', wtp_base_css() );
-}, 20 );
+}, 100 );
 
 /*
  * Apply as Inline CSS in Frontend
  */
 add_action( 'wp_enqueue_scripts', function() {
     wp_add_inline_style( 'generate-style', wtp_base_css() );
-}, 20 );
+}, 100 );
