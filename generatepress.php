@@ -83,7 +83,14 @@ function tu_custom_color_palettes( $palettes ) {
  */
 add_filter( 'generate_typography_default_fonts','tu_add_system_fonts' );
 function tu_add_system_fonts( $fonts ) {
-    // $fonts[] = 'My Font Name';
+	if ( function_exists('wtp_font') ) {
+		$systemfonts = wtp_font() ?? false;
+
+		foreach ($systemfonts as $key => $systemfont) {
+			$fonts[] = $systemfont;
+		}
+	}
+
     return $fonts;
 }
 
@@ -103,72 +110,11 @@ function tu_search_placeholder() {
     return 'Suche';
 }
 
-/**
- * Author Link
- */
-add_filter( 'generate_post_author','tu_autho_link' );
-function tu_autho_link() {
-    return 'false';
-}
-
-
 
 /**
- * Reduce Number of Fonts
+ * Number of Fonts
  */
 add_filter( 'generate_number_of_fonts','tu_show_fifty_google_fonts' );
 function tu_show_fifty_google_fonts() {
-	return 30;
+	return 'all';
 }
-
-add_filter( 'generate_typography_customize_list', 'tu_add_google_fonts' );
-function tu_add_google_fonts( $fonts ) {
-	$fonts[ 'open_sans' ] = array( 
-		'name' => 'Open Sans',
-		'variants' => array( '400', '500', '700' ),
-		'category' => 'sans-serif'
-	);
-	$fonts[ 'roboto' ] = array( 
-		'name' => 'Roboto',
-		'variants' => array( '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i' ),
-		'category' => 'sans-serif'
-	);
-
-	$fonts[ 'lato' ] = array( 
-		'name' => 'Lato',
-		'variants' => array( '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i' ),
-		'category' => 'sans-serif'
-	);
-
-	$fonts[ 'montserrat' ] = array( 
-		'name' => 'Montserrat',
-		'variants' => array( '300', '300i', '400', '400i', '500', '500i', '600', '600i', '700', '700i' ),
-		'category' => 'sans-serif'
-	);
-
-	return $fonts;
-}
-
-
-
-
-/**
- * Remove GP Customizer options
- */
-// add_action( 'after_setup_theme','tu_remove_customizer_options', 1000 );
-// function tu_remove_customizer_options( $wp_customize ) {
-// 	remove_action( 'customize_register', 'generate_customize_register' );
-// 	remove_action( 'customize_register', 'generate_default_fonts_customize_register' );
-// 	remove_action( 'customize_register', 'generate_backgrounds_customize', 999 );
-// 	remove_action( 'customize_register', 'generate_backgrounds_secondary_nav_customizer', 1000 );
-// 	remove_action( 'customize_register', 'generate_blog_customize_register', 99 );
-// 	remove_action( 'customize_register', 'generate_colors_customize_register' );
-// 	remove_action( 'customize_register', 'generate_colors_secondary_nav_customizer', 1000 );
-// 	remove_action( 'customize_register', 'generate_colors_wc_customizer', 100 );
-// 	remove_action( 'customize_register', 'generate_copyright_customize_register' );
-// 	remove_action( 'customize_register', 'generate_menu_plus_customize_register', 100 );
-// 	remove_action( 'customize_register', 'generate_page_header_blog_customizer', 99 );
-// 	remove_action( 'customize_register', 'generate_secondary_nav_customize_register', 100 );
-// 	remove_action( 'customize_register', 'generate_spacing_customize_register', 99 );
-// 	remove_action( 'customize_register', 'generate_fonts_customize_register' );
-// }

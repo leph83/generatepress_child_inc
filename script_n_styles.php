@@ -15,6 +15,7 @@ function generatepress_child_enqueue_scripts() {
 
 	wp_enqueue_style( 'style-theme', trailingslashit( get_stylesheet_directory_uri() ) . 'css/style.css', '', $version );
 	wp_enqueue_style( 'style-gutenberg', trailingslashit( get_stylesheet_directory_uri() ) . 'css/gutenberg.css', '', $version );
+	wp_enqueue_style( 'style-fonts', trailingslashit( get_stylesheet_directory_uri() ) . 'css/fonts.css', '', $version );
 
 	if ($test == true) {
 		wp_enqueue_style( 'style-test', trailingslashit( get_stylesheet_directory_uri() ) . 'css/test.css' );
@@ -32,7 +33,7 @@ function gutenberg_styles() {
 	wp_enqueue_style( 'style-gutenberg', trailingslashit( get_stylesheet_directory_uri() ) . 'css/gutenberg.css' );
 
 }
-add_action('admin_enqueue_scripts', 'gutenberg_styles');
+add_action('admin_enqueue_scripts', 'gutenberg_styles', 100);
 
 
 
